@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MediaService</string>
+
+    <string name="all_songs">Songs</string>
+    <string name="artists_title">Artists</string>
+    <string name="genres_title">Genres</string>
+    <string name="albums_title">Albums</string>
+    <string name="playback_error">Something went wrong.</string>
+    <string name="permission_error">Missing permission.</string>
+    <string name="permission_error_resolve">Grant permission</string>
+    <string name="playlist">Now Playing</string>
+    <string name="shuffle">Shuffle</string>
+
+    <string name="prev">Previous</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="next">Next</string>
+
+    <!--Settings-->
+    <string name="settings_main_animation_title">Animations</string>
+    <string name="settings_main_animation_description">Add animation effects while playing music</string>
+    <string name="settings_main_online_music_title">Online music service</string>
+    <string name="settings_main_online_music_description">Get metadata from online service</string>
+    <string name="settings_main_equalizer_title">Equalizer</string>
+    <string name="settings_main_equalizer_description">Modify audio tone settings</string>
+</resources>
