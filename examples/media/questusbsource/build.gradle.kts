@@ -12,6 +12,8 @@
 android {
     namespace = "com.quest.macaw.media.appservice"
     defaultConfig {
+        minSdk = 30
+        targetSdk = 30
         applicationId = "com.quest.macaw.media.appservice"
     }
 }

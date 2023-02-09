@@ -36,7 +36,7 @@ public class SourceManager {
         mSources.put(MediaInterfaceConstant.SourceType.INTERNAL_MEMORY, new InternalStorage(context, stateChangeListener));
         mSources.put(MediaInterfaceConstant.SourceType.USB1, new USBManagerImpl(context, stateChangeListener));
         mSources.put(MediaInterfaceConstant.SourceType.ALEXA, new AlexaImpl(context, stateChangeListener));
-        mActiveSource = MediaInterfaceConstant.SourceType.INTERNAL_MEMORY;
+        mActiveSource = MediaInterfaceConstant.SourceType.USB1;
     }
 
     public static SourceManager getInstance(Context context, OnSourceStateChangeListener stateChangeListener) {

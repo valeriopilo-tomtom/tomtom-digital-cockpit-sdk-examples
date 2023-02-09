@@ -46,7 +46,6 @@ public class MediaService extends MediaBrowserServiceCompat {
     static final String ACTION_NEXT = "com.android.car.media.localmediaplayer.ACTION_NEXT";
     static final String ACTION_PREV = "com.android.car.media.localmediaplayer.ACTION_PREV";
 
-    private MediaServiceInterface mMediaServiceInterface;
     private MediaSessionCompat mMediaSession;
     private PlaybackStateCompat.Builder mBuilder;
     private MusicPlayer mMusicPlayer;
@@ -80,7 +79,6 @@ public class MediaService extends MediaBrowserServiceCompat {
         setSessionToken(mMediaSession.getSessionToken());
         mMusicPlayer = new MusicPlayerImpl(getApplicationContext(), mMediaSession, mDataModel);
         MediaServiceManager mediaServiceManager = new MediaServiceManager(getApplicationContext(), mMusicPlayer);
-        mMediaServiceInterface = new MediaServiceInterface(getApplicationContext(), mediaServiceManager, new EqualizerManager(mMusicPlayer,getApplicationContext()));
         MacawClusterHandler macawClusterHandler = new MacawClusterHandler(getApplicationContext(), mediaServiceManager);
         /*String CHANNEL_ID = "my_channel_01";
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
@@ -96,14 +94,6 @@ public class MediaService extends MediaBrowserServiceCompat {
         startForeground(1, notification);*/
 
     }
-
-    @Override
-    public IBinder onBind(Intent intent) {
-        String action = intent.getAction();
-        Log.i(TAG, "Binding action is : " + action);
-        return mMediaServiceInterface.getMediaServiceInterface();
-    }
-
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
